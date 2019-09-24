@@ -33,14 +33,14 @@ namespace NSwag
                 options.SubstituteApiVersionInUrl = true;
             });
 
-            /*
-             * This approach looks nice, but explicitly calling AddOpenApiDocument for each version may be preferable 
-             * in that it makes it easier to maintain version-specific document configuration. Perhaps v1 is an 
-             * unauthenticated API, v2 introduces basic auth, and v3 uses a JWT issued by an OAuth2.0 or OIDC identity 
-             * provider. In this scenario, the version description enumeration approach is counterproductive.
-             */
             if (Configuration.GetValue<bool>("UseApiVersionDescriptionProviderToBuildOpenApiDocs"))
             {
+                /*
+                 * This approach looks nice, but explicitly calling AddOpenApiDocument for each version may be preferable 
+                 * in that it makes it easier to maintain version-specific document configuration. Perhaps v1 is an 
+                 * unauthenticated API, v2 introduces basic auth, and v3 uses a JWT issued by an OAuth2.0 or OIDC identity 
+                 * provider. In this scenario, the version description enumeration approach is counterproductive.
+                 */
                 var versionDescriptionProvider = services.BuildServiceProvider().GetRequiredService<IApiVersionDescriptionProvider>();
                 foreach (var versionDescription in versionDescriptionProvider.ApiVersionDescriptions)
                 {

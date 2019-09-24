@@ -1,20 +1,12 @@
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Net.Security;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ApiExplorer;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using Newtonsoft.Json;
+using System.Diagnostics;
 
 namespace Swashbuckle
 {
@@ -27,7 +19,6 @@ namespace Swashbuckle
 
         public IConfiguration Configuration { get; }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
@@ -55,12 +46,12 @@ namespace Swashbuckle
                     {
                         info.Title += " (DEPRECATED)";
                     }
-                    
+
                     Debug.WriteLine(JsonConvert.SerializeObject(info));
 
                     return info;
                 }
-                
+
                 // Unlike with NSwag, there doesn't appear to be any real value to registering documents with independent
                 // SwaggerDoc calls for each version. Stuff like JSON serialization and security definitions is not defined
                 // at the version level.
@@ -73,7 +64,6 @@ namespace Swashbuckle
             });
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env, IApiVersionDescriptionProvider versionDescriptionProvider)
         {
             if (env.IsDevelopment())
