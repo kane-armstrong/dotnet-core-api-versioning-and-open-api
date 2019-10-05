@@ -1,13 +1,13 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Microsoft.AspNetCore.Mvc;
 
-namespace NSwag.Controllers.V1
+namespace WeatherForecastApi.Swashbuckle.Controllers.V1
 {
     [ApiController]
     [ApiVersion("1")]
-    [Route("v{version:apiVersion}/[controller]")]
+    [Route("[controller]")]
     public class WeatherForecastController : ControllerBase
     {
         private static readonly string[] Summaries = {

@@ -1,11 +1,36 @@
 # Using API Versioning with ASP.NET Core and Swagger
 
-This repo demonstrates how to get Swagger to work in ASP.NET Core with API versioning enabled. There are two sets of examples,
-one for .NET Core 2.x and another for .NET Core 3.0. Both demonstrate how this works for both NSwag and Swashbuckle. 
+This repo demonstrates how to get Swagger to work in ASP.NET Core with API versioning enabled.
 
-The .NET Core 3.0 demo also includes an example of how to generate an API client using NSwag. See [here](https://github.com/RicoSuter/NSwag)
-for a link to the code gen tooling in question, specifically [this](https://www.npmjs.com/package/nswag) npm package.
+There are two examples - one for Swashbuckle, and another for NSwag. Should be pretty self explanatory which is which.
 
-I recommend using NSwag over Swashbuckle. Integrates better with the code gen, and seems a bit more flexible when defining documents.
-Specifically, NSwag allows you to define authentication schemes at the spec level, but Swashbuckle seems to do this across all
-specs.
+## Client Generation
+
+There is an example of getting client generation working with NSwag in the **codegen** folder. 
+
+Links:
+
+* [GitHub source code for the code gen tooling](https://github.com/RicoSuter/NSwag)
+* [NPM package used in this example](https://www.npmjs.com/package/nswag)
+
+Some gotchas:
+
+### Generating a client for each version of your API in the same output
+
+When using API versioning, you might want to generate a client for each version of your API. This won't happen if you are running 
+independent specs for each version; you will need a spec that displays all versions of your API. Example of how to do this in `ConfigureServices`:
+
+````
+    services.AddOpenApiDocument(document =>
+    {
+        document.DocumentName = "all";
+        document.Version = "all";
+        document.Title = "Weather Forecast API";
+        document.Description = "Weather Forecast API";
+    });
+````
+
+### Ensuring the generated code is usable in a DevOps pipeline or as a project depedency
+
+All the nswag tooling does is spit out code. If you want to be able to use it, you need to ensure the directory to which this code is exported
+contains a csproj with Newtonsoft.Json installed. At the time of writing this is the only dependency.

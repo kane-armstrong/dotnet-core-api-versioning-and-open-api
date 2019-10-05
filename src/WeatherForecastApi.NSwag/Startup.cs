@@ -1,3 +1,5 @@
+using System.Linq;
+using System.Net;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.ApiExplorer;
@@ -6,11 +8,10 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
+using NSwag;
 using NSwag.Generation.Processors.Security;
-using System.Linq;
-using System.Net;
 
-namespace NSwag
+namespace WeatherForecastApi.NSwag
 {
     public class Startup
     {
@@ -88,6 +89,7 @@ namespace NSwag
                 });
             }
 
+            // Supports generating C# clients for all versions of the API in one go from nswag toolchain
             services.AddOpenApiDocument(document =>
             {
                 document.DocumentName = "all";

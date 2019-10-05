@@ -1,6 +1,6 @@
 using System;
 
-namespace NSwag
+namespace WeatherForecastApi.NSwag
 {
     public class WeatherForecast
     {

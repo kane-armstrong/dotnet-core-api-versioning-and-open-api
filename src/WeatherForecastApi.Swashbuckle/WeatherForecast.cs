@@ -1,6 +1,6 @@
 using System;
 
-namespace Swashbuckle
+namespace WeatherForecastApi.Swashbuckle
 {
     public class WeatherForecast
     {

@@ -3,7 +3,7 @@
   "defaultVariables": null,
   "documentGenerator": {
     "aspNetCoreToOpenApi": {
-      "project": "NSwag/NSwag.csproj",
+      "project": "../src/WeatherForecastApi.NSwag/WeatherForecastApi.NSwag.csproj",
       "msBuildProjectExtensionsPath": null,
       "configuration": null,
       "runtime": null,
@@ -132,7 +132,7 @@
 		"enumNameGeneratorType": null,
 		"serviceHost": null,
 		"serviceSchemes": null,
-		"output": "WeatherForecastApi.Client/WeatherForecastApiClient.cs"
+		"output": "../src/WeatherForecastApi.Client/WeatherForecastApiClient.cs"
 	}
   }
 }
