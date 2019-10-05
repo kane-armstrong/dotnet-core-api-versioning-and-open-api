@@ -7,7 +7,7 @@ namespace WeatherForecastApi.NSwag.Controllers.V1
 {
     [ApiController]
     [ApiVersion("1")]
-    [Route("v{version:apiVersion}/[controller]")]
+    [Route("v{version:apiVersion}/weatherforecast")]
     public class WeatherForecastV1Controller : ControllerBase
     {
         private static readonly string[] Summaries = {

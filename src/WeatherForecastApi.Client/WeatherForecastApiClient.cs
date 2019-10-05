@@ -61,7 +61,7 @@ namespace WeatherForecastApi.Client
         public async System.Threading.Tasks.Task<System.Collections.Generic.ICollection<WeatherForecast>> GetAsync(System.Threading.CancellationToken cancellationToken)
         {
             var urlBuilder_ = new System.Text.StringBuilder();
-            urlBuilder_.Append("v1/WeatherForecastV1");
+            urlBuilder_.Append("v1/weatherforecast");
     
             var client_ = _httpClient;
             try
@@ -255,7 +255,7 @@ namespace WeatherForecastApi.Client
         public async System.Threading.Tasks.Task<System.Collections.Generic.ICollection<WeatherForecast>> GetAsync(System.Threading.CancellationToken cancellationToken)
         {
             var urlBuilder_ = new System.Text.StringBuilder();
-            urlBuilder_.Append("v2/WeatherForecastV2");
+            urlBuilder_.Append("v2/weatherforecast");
     
             var client_ = _httpClient;
             try
