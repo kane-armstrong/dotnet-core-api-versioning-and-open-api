@@ -1,0 +1,15 @@
+{
+  "name": "nswag-api-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "generate": "nswag run /runtime:NetCore30 nswag.json"
+  },
+  "author": "Kane Armstrong",
+  "license": "MIT",
+  "homepage": "https://github.com/kane-armstrong/dotnet-core-api-versioning-and-open-api",
+  "devDependencies": {
+    "nswag": "13.1.2"
+  }
+}

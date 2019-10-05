@@ -87,6 +87,14 @@ namespace NSwag
                     );
                 });
             }
+
+            services.AddOpenApiDocument(document =>
+            {
+                document.DocumentName = "all";
+                document.Version = "all";
+                document.Title = "Weather Forecast API";
+                document.Description = "Weather Forecast API";
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
