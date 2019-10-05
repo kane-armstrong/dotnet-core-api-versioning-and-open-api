@@ -20,8 +20,9 @@ Some gotchas:
 
 ### Generating a client for each version of your API in the same output
 
-When using API versioning, you might want to generate a client for each version of your API. This won't happen if you are running 
-independent specs for each version; you will need a spec that displays all versions of your API. Example of how to do this in `ConfigureServices`:
+When using API versioning, you might want to generate a client for each version of your API in a single pass and in the same output. 
+This won't happen if you are running independent specs for each version; you will need a spec that displays all versions of your API. 
+Example of how to do this in `ConfigureServices`:
 
 ````
     services.AddOpenApiDocument(document =>
