@@ -4,6 +4,9 @@ This repo demonstrates how to get Swagger to work in ASP.NET Core with API versi
 
 There are two examples - one for Swashbuckle, and another for NSwag. Should be pretty self explanatory which is which.
 
+See [this branch](https://github.com/kane-armstrong/dotnet-core-api-versioning-and-open-api/tree/net-core-2.2) for a
+.NET Core 2.2 version.
+
 ## Client Generation
 
 There is an example of getting client generation working with NSwag in the **codegen** folder. 
