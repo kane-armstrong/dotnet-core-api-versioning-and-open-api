@@ -8,7 +8,7 @@ namespace WeatherForecastApi.NSwag.Controllers.V1
     [ApiController]
     [ApiVersion("1")]
     [Route("v{version:apiVersion}/[controller]")]
-    public class WeatherForecastController : ControllerBase
+    public class WeatherForecastV1Controller : ControllerBase
     {
         private static readonly string[] Summaries = {
             "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"

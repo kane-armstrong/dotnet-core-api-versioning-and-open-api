@@ -34,3 +34,11 @@ independent specs for each version; you will need a spec that displays all versi
 
 All the nswag tooling does is spit out code. If you want to be able to use it, you need to ensure the directory to which this code is exported
 contains a csproj with Newtonsoft.Json installed. At the time of writing this is the only dependency.
+
+### Avoiding bad client configuration like methods called Get2Async
+
+NSwag picks up client class/interface name from the name of your controller. Likewise, method names come from the name of the action on the controller.
+If you are following a convention like `Controllers/Vx/UsersController`, and you have two versions of `UsersController`, then NSwag will only generate
+a single interface. If there is an action on each called `Get`, you will end up with `GetAsync` and `Get2Async` in your generated client. You probably
+don't want that... To ensure you have `IUsersClientV1` and `IUsersClientV2`, with a single `GetAsync` on each, you will need to name your controllers
+`UsersV1Controller` and `UsersV2Controller`. There might be a way around this, i.e. by configuring nswag.json, but I have yet to look.
