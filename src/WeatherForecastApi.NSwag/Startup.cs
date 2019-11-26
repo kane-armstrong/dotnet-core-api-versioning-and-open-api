@@ -72,7 +72,7 @@ namespace WeatherForecastApi.NSwag
                     document.ApiGroupNames = new[] { "2" };
                     document.Title = "Weather Forecast API";
                     document.Description = "This API returns weather forecast information";
-                    document.Version = "v1";
+                    document.Version = "v2";
                     document.IgnoreObsoleteProperties = true;
                     document.SerializerSettings = new JsonSerializerSettings { ContractResolver = new DefaultContractResolver() };
 
