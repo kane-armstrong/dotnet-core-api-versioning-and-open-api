@@ -26,6 +26,7 @@ namespace WeatherForecastApi.NSwag
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddMemoryCache();
             services.AddApiVersioning(options =>
             {
                 options.ReportApiVersions = true;

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace WeatherForecastApi.NSwag.Controllers.V1
@@ -15,6 +16,7 @@ namespace WeatherForecastApi.NSwag.Controllers.V1
         };
 
         [HttpGet]
+        [ProducesResponseType(typeof(IEnumerable<WeatherForecast>), StatusCodes.Status200OK)]
         public IEnumerable<WeatherForecast> Get()
         {
             var rng = new Random();
