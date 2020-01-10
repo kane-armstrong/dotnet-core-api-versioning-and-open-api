@@ -1,6 +1,6 @@
 # Using API Versioning with ASP.NET Core and Swagger
 
-This repo demonstrates how to get Swagger to work in ASP.NET Core with API versioning enabled.
+This repo demonstrates how to get Swagger to work in ASP.NET Core 3.1 with API versioning enabled.
 
 There are two examples - one for Swashbuckle, and another for NSwag. Should be pretty self explanatory which is which.
 
@@ -21,7 +21,7 @@ There is an example of getting client generation working with NSwag in the **cod
 
 The nswag npm package supports programmatic client generation. Running the `generate-client` script
 installs nswag and then runs the `generate` script defined in `package.json`. In this script, we tell 
-nswag to run using the NetCore30 runtime (since our API is built with .NET Core 3.0) and point it to 
+nswag to run using the NetCore30 runtime (since our API is built with .NET Core 3.1) and point it to 
 a configuration file. The configuration does most of the heavy lefting from here. Besides telling
 nswag what the generated client code should look like and what rules to conform to, this is where
 we tell it where to find the project to generate a client for and where to save the generated client 
