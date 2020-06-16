@@ -1,4 +1,5 @@
 using System.Diagnostics;
+using System.Text.Json;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.ApiExplorer;
@@ -6,7 +7,6 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
-using Newtonsoft.Json;
 
 namespace WeatherForecastApi.Swashbuckle
 {
@@ -46,8 +46,8 @@ namespace WeatherForecastApi.Swashbuckle
                     {
                         info.Title += " (DEPRECATED)";
                     }
-
-                    Debug.WriteLine(JsonConvert.SerializeObject(info));
+                    
+                    Debug.WriteLine(JsonSerializer.Serialize(info));
 
                     return info;
                 }
