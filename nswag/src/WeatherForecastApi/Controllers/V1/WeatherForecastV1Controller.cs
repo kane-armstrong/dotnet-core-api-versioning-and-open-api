@@ -4,7 +4,7 @@ using System.Linq;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
-namespace WeatherForecastApi.NSwag.Controllers.V1
+namespace WeatherForecastApi.Controllers.V1
 {
     [ApiController]
     [ApiVersion("1")]

@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Caching.Memory;
 
-namespace WeatherForecastApi.NSwag.Controllers.V2
+namespace WeatherForecastApi.Controllers.V2
 {
     [ApiController]
     [ApiVersion("2")]
@@ -26,7 +26,7 @@ namespace WeatherForecastApi.NSwag.Controllers.V2
         {
             _memoryCache = memoryCache;
         }
-        
+
         [HttpGet]
         [ProducesResponseType(typeof(IEnumerable<WeatherForecast>), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(void), StatusCodes.Status401Unauthorized)]

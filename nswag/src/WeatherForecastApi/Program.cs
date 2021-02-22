@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
 
-namespace WeatherForecastApi.NSwag
+namespace WeatherForecastApi
 {
     public class Program
     {

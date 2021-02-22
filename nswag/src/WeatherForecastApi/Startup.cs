@@ -11,7 +11,7 @@ using Newtonsoft.Json.Serialization;
 using NSwag;
 using NSwag.Generation.Processors.Security;
 
-namespace WeatherForecastApi.NSwag
+namespace WeatherForecastApi
 {
     public class Startup
     {

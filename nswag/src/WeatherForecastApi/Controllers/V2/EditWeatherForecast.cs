@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace WeatherForecastApi.NSwag.Controllers.V2
+namespace WeatherForecastApi.Controllers.V2
 {
     public class EditWeatherForecast
     {
