@@ -22,7 +22,6 @@ namespace WeatherForecastApi
 
         public IConfiguration Configuration { get; }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
@@ -90,7 +89,7 @@ namespace WeatherForecastApi
                 });
             }
 
-            // Supports generating C# clients for all versions of the API in one go from nswag toolchain
+            // Supports generating C# clients for all versions of the API in one go
             services.AddOpenApiDocument(document =>
             {
                 document.DocumentName = "all";
@@ -100,7 +99,6 @@ namespace WeatherForecastApi
             });
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())

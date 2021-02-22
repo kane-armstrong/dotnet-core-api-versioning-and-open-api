@@ -4,12 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "generate": "nswag run /runtime:NetCore31 nswag.json"
+    "generate": "nswag run /runtime:Net50 nswag.json"
   },
   "author": "Kane Armstrong",
   "license": "MIT",
   "homepage": "https://github.com/kane-armstrong/dotnet-core-api-versioning-and-open-api",
   "devDependencies": {
-    "nswag": "13.2.0"
+    "nswag": "13.10.5"
   }
 }
