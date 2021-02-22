@@ -7,14 +7,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{9C36E148-4CB
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "codegen", "codegen", "{D947FECC-FAF7-4110-A87D-9F5FD0B27481}"
 	ProjectSection(SolutionItems) = preProject
-		codegen\generate-client.bat = codegen\generate-client.bat
-		codegen\nswag.json = codegen\nswag.json
-		codegen\package.json = codegen\package.json
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{8281298A-7ED7-41AC-B143-92683831EBB3}"
-	ProjectSection(SolutionItems) = preProject
-		README.md = README.md
+		generate-client.bat = generate-client.bat
+		generate-client.sh = generate-client.sh
+		nswag.json = nswag.json
+		package.json = package.json
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WeatherForecastApi", "src\WeatherForecastApi\WeatherForecastApi.csproj", "{15B89DF1-75F5-42BE-962E-7861BB1534C1}"
