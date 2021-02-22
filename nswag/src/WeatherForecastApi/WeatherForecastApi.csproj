@@ -9,10 +9,6 @@
       <PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning" Version="5.0.0" />
       <PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer" Version="5.0.0" />
       <PackageReference Include="NSwag.AspNetCore" Version="13.10.5" />
-      <PackageReference Include="NSwag.MSBuild" Version="13.10.5">
-        <PrivateAssets>all</PrivateAssets>
-        <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-      </PackageReference>
     </ItemGroup>
 
 </Project>
