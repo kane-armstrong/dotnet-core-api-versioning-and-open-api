@@ -5,14 +5,6 @@ VisualStudioVersion = 16.0.29318.209
 MinimumVisualStudioVersion = 15.0.26124.0
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{9C36E148-4CB9-457B-9E46-A1451E999535}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "codegen", "codegen", "{D947FECC-FAF7-4110-A87D-9F5FD0B27481}"
-	ProjectSection(SolutionItems) = preProject
-		generate-client.bat = generate-client.bat
-		generate-client.sh = generate-client.sh
-		nswag.json = nswag.json
-		package.json = package.json
-	EndProjectSection
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WeatherForecastApi", "src\WeatherForecastApi\WeatherForecastApi.csproj", "{15B89DF1-75F5-42BE-962E-7861BB1534C1}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WeatherForecastApi.Client", "src\WeatherForecastApi.Client\WeatherForecastApi.Client.csproj", "{7DAD093F-0027-4E51-BC90-56412D92D606}"
