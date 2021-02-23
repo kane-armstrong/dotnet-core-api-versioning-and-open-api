@@ -284,10 +284,6 @@ public partial interface IWeatherForecastVClient
 Just add the following to your csproj:
 
 ```xml
-    <PropertyGroup>
-        <TargetFramework>net5.0</TargetFramework>
-    </PropertyGroup>
-
     <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
       <DocumentationFile>obj\debug\net5.0\WeatherForecastApi.xml</DocumentationFile>
     </PropertyGroup>
