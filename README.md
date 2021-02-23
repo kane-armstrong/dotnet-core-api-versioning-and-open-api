@@ -5,7 +5,7 @@ It is also expensive when you work in an organization that has multiple teams co
 with each team spending the same time and effort to independently create their own API clients. The motivation for
 this repository is to demonstrate a better approach, where the team responsible for a web service instead uses code
 generation tools to generate an API client for the service. A natural progression of this (not demonstrated here)
-is to publish the client as a nuget package during the build process.
+is to publish the client as a nuget package during the build process on a build server, e.g. in Jenkins or TeamCity.
 
 This repository demonstrates:
 
