@@ -17,7 +17,7 @@ This repository demonstrates:
 * Some of the different ways to customize the way documentation is incorporated into your Swagger docs and the
 generated client ([link](nswag-example/src/WeatherForecastApi/Controllers/V2/WeatherForecastV2Controller.cs))
 
-## Options for generating the client
+## Options for generating a client
 
 A convenient approach to generating the client is to install the NSwag.MSBuild package and configure an `AfterBuild`
 event in the project file. If you would prefer not to do this (e.g. because you don't want to slow your builds down)
@@ -26,7 +26,7 @@ then you could use something like the toolchain downloadable via npm. The exampl
 This will only work if you are using NSwag for your OpenAPI documentation in your API project; if you are using
 Swashbuckle then you will need to replace the document generator with the Swashbuckle CLI, and point NSwag at that instead.
 
-### 1. Generating the client with npm
+### 1. Generating a client with npm
 
 You will need to install npm and the nswag package (`npm install nswag`). From here you can run the following command
 to generate the client:
@@ -48,7 +48,7 @@ npm install
 npm run generate
 ```
 
-### 2. Generating the client with NSwag.MSBuild when using NSwag
+### 2. Generating a client with NSwag.MSBuild when using NSwag
 
 This approach involves installing the NSwag.MSBuild package and adding an `AfterBuild` target to your csproj. You have
 two options for where to put this; you can either add it to your API project, or to the client project that owns the
@@ -75,12 +75,12 @@ builds to the Error List window. Without these you would have to go hunting arou
 for build failures. If you would prefer client generation failures to fail the entire build, just change `ContinueOnError`
 to false.
 
-### 3. Generating the client when using Swashbuckle
+### 3. Generating a client when using Swashbuckle
 
 Todo - generate the document using Swashbuckle CLI (preferably as an AfterBuild step) and configure NSwag to pick it up
 and create a client from it. Methods are probably not going to be as nicely named as they are with NSwag
 
-## Generating clients when using API versioning
+## Generating a client when using API versioning
 
 The samples in this codebase demonstrate both one approach to implementing API versioning and how to support these
 different versions in your documentation, and consequently, any clients you generate. 
@@ -205,7 +205,7 @@ In the nswag.json file:
 }
 ```
 
-## Supporting deployment of the generated client code as a nuget package
+## Supporting deployment of a client as a nuget package
 
 If you want to make the generated client available as a nuget package, then the nswag tooling isn't enough on its own. In this
 example I've configured nswag to save the generated client code to the root directory of an existing .NET Standard project. Note
@@ -235,7 +235,7 @@ end up with `GetAsync` and `Get2Async` in your generated client. If you don't wa
 and `IUsersClientV2`, with a single `GetAsync` on each, you will need to name your controllers `UsersV1Controller` and
 `UsersV2Controller`. There might be a way around this, i.e. by configuring nswag.json, but I haven't tried.
 
-## Improving the documentation of what request and response schema
+## Improving the documentation of requests and responses in Swagger (and consequently, a generated client)
 
 The example below demonstrate how you can produce significantly richer documentation, which is helpful for both consumers of
 your Swagger documentation and consumers of your generated client code (thanks to the inclusion of this documentation as
