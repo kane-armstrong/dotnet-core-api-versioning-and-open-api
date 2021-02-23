@@ -40,10 +40,10 @@ list of supported runtimes). An example is NSwagExe_Net50 for .NET 5.
 * You could use one of the various command line arguments instead of the nswag.json file if preferred. I prefer the nswag.json
 file as it is less awkward to work with as your list of customizations grows.
 
-See [here](nswag-toolchain) for a working example. If you want to try it out as-is:
+See [here](nswag-toolchain-example) for a working example. If you want to try it out as-is:
 
 ```cmd
-cd nswag-toolchain
+cd nswag-toolchain-example
 npm install
 npm run generate
 ```
