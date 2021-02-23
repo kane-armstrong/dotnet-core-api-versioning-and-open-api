@@ -10,7 +10,7 @@ namespace WeatherForecastApi.Controllers.V2
 {
     [ApiController]
     [ApiVersion("2")]
-    [Route("v{version:apiVersion}/weatherforecast")]
+    [Route("v2/weatherforecast")]
     public class WeatherForecastV2Controller : ControllerBase
     {
         private static readonly string[] Summaries = {
