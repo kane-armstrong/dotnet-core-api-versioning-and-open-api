@@ -9,13 +9,13 @@ is to publish the client as a nuget package during the build process on a build 
 
 This repository demonstrates:
 
-* Generating clients using the nswag toolchain (obtained via npm)
-* Generating clients using the NSwag.MSBuild package
-* *Generating clients for services using Swashbuckle for their API documentation* (todo - only partially working)
-* Generating clients for services using NSwag for their API documentation
-* Generating clients for services that use API versioning
+* Generating clients using the nswag toolchain (obtained via npm) ([link](nswag-toolchain-example))
+* Generating clients using the NSwag.MSBuild package ([link](nswag-example/src/WeatherForecastApi.Client/WeatherForecastApi.Client.csproj))
+* *Generating clients for services using Swashbuckle for their API documentation* (todo - only partially working) ([link](swashbuckle-example))
+* Generating clients for services using NSwag for their API documentation ([link](nswag-example))
+* Generating clients for services that use API versioning ([link](nswag-example) or [link](swashbuckle-example))
 * Some of the different ways to customize the way documentation is incorporated into your Swagger docs and the
-generated client
+generated client ([link](nswag-example/src/WeatherForecastApi/Controllers/V2/WeatherForecastV2Controller.cs))
 
 ## Options for generating the client
 
