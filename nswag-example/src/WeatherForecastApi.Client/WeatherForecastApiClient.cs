@@ -25,10 +25,14 @@ namespace WeatherForecastApi.Client
         /// <exception cref="WeatherForecastApiException">A server side error occurred.</exception>
         System.Threading.Tasks.Task<System.Collections.Generic.ICollection<WeatherForecast>> GetAsync(System.Threading.CancellationToken cancellationToken);
     
+        /// <summary>Lists weather forecasts.</summary>
+        /// <returns>An array consisting of zero or more weather forecasts.</returns>
         /// <exception cref="WeatherForecastApiException">A server side error occurred.</exception>
         System.Threading.Tasks.Task<System.Collections.Generic.ICollection<WeatherForecast>> ListAsync();
     
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
+        /// <summary>Lists weather forecasts.</summary>
+        /// <returns>An array consisting of zero or more weather forecasts.</returns>
         /// <exception cref="WeatherForecastApiException">A server side error occurred.</exception>
         System.Threading.Tasks.Task<System.Collections.Generic.ICollection<WeatherForecast>> ListAsync(System.Threading.CancellationToken cancellationToken);
     
@@ -39,10 +43,14 @@ namespace WeatherForecastApi.Client
         /// <exception cref="WeatherForecastApiException">A server side error occurred.</exception>
         System.Threading.Tasks.Task CreateAsync(CreateWeatherForecast weatherForecast, System.Threading.CancellationToken cancellationToken);
     
+        /// <summary>Finds a weather forecast by its ID.</summary>
+        /// <returns>The requested weather forecast, if it was found.</returns>
         /// <exception cref="WeatherForecastApiException">A server side error occurred.</exception>
         System.Threading.Tasks.Task<WeatherForecast> GetByIdAsync(System.Guid id);
     
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
+        /// <summary>Finds a weather forecast by its ID.</summary>
+        /// <returns>The requested weather forecast, if it was found.</returns>
         /// <exception cref="WeatherForecastApiException">A server side error occurred.</exception>
         System.Threading.Tasks.Task<WeatherForecast> GetByIdAsync(System.Guid id, System.Threading.CancellationToken cancellationToken);
     
@@ -161,6 +169,8 @@ namespace WeatherForecastApi.Client
             }
         }
     
+        /// <summary>Lists weather forecasts.</summary>
+        /// <returns>An array consisting of zero or more weather forecasts.</returns>
         /// <exception cref="WeatherForecastApiException">A server side error occurred.</exception>
         public System.Threading.Tasks.Task<System.Collections.Generic.ICollection<WeatherForecast>> ListAsync()
         {
@@ -168,6 +178,8 @@ namespace WeatherForecastApi.Client
         }
     
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
+        /// <summary>Lists weather forecasts.</summary>
+        /// <returns>An array consisting of zero or more weather forecasts.</returns>
         /// <exception cref="WeatherForecastApiException">A server side error occurred.</exception>
         public async System.Threading.Tasks.Task<System.Collections.Generic.ICollection<WeatherForecast>> ListAsync(System.Threading.CancellationToken cancellationToken)
         {
@@ -221,7 +233,7 @@ namespace WeatherForecastApi.Client
                             {
                                 throw new WeatherForecastApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
                             }
-                            throw new WeatherForecastApiException<ProblemDetails>("A server side error occurred.", status_, objectResponse_.Text, headers_, objectResponse_.Object, null);
+                            throw new WeatherForecastApiException<ProblemDetails>("If the request is not authorized.", status_, objectResponse_.Text, headers_, objectResponse_.Object, null);
                         }
                         else
                         {
@@ -325,6 +337,8 @@ namespace WeatherForecastApi.Client
             }
         }
     
+        /// <summary>Finds a weather forecast by its ID.</summary>
+        /// <returns>The requested weather forecast, if it was found.</returns>
         /// <exception cref="WeatherForecastApiException">A server side error occurred.</exception>
         public System.Threading.Tasks.Task<WeatherForecast> GetByIdAsync(System.Guid id)
         {
@@ -332,6 +346,8 @@ namespace WeatherForecastApi.Client
         }
     
         /// <param name="cancellationToken">A cancellation token that can be used by other objects or threads to receive notice of cancellation.</param>
+        /// <summary>Finds a weather forecast by its ID.</summary>
+        /// <returns>The requested weather forecast, if it was found.</returns>
         /// <exception cref="WeatherForecastApiException">A server side error occurred.</exception>
         public async System.Threading.Tasks.Task<WeatherForecast> GetByIdAsync(System.Guid id, System.Threading.CancellationToken cancellationToken)
         {
@@ -382,16 +398,6 @@ namespace WeatherForecastApi.Client
                             return objectResponse_.Object;
                         }
                         else
-                        if (status_ == 400)
-                        {
-                            var objectResponse_ = await ReadObjectResponseAsync<ProblemDetails>(response_, headers_).ConfigureAwait(false);
-                            if (objectResponse_.Object == null)
-                            {
-                                throw new WeatherForecastApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
-                            }
-                            throw new WeatherForecastApiException<ProblemDetails>("A server side error occurred.", status_, objectResponse_.Text, headers_, objectResponse_.Object, null);
-                        }
-                        else
                         if (status_ == 401)
                         {
                             var objectResponse_ = await ReadObjectResponseAsync<ProblemDetails>(response_, headers_).ConfigureAwait(false);
@@ -399,7 +405,7 @@ namespace WeatherForecastApi.Client
                             {
                                 throw new WeatherForecastApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
                             }
-                            throw new WeatherForecastApiException<ProblemDetails>("A server side error occurred.", status_, objectResponse_.Text, headers_, objectResponse_.Object, null);
+                            throw new WeatherForecastApiException<ProblemDetails>("If the request is not authorized.", status_, objectResponse_.Text, headers_, objectResponse_.Object, null);
                         }
                         else
                         if (status_ == 404)
@@ -409,7 +415,7 @@ namespace WeatherForecastApi.Client
                             {
                                 throw new WeatherForecastApiException("Response was null which was not expected.", status_, objectResponse_.Text, headers_, null);
                             }
-                            throw new WeatherForecastApiException<ProblemDetails>("A server side error occurred.", status_, objectResponse_.Text, headers_, objectResponse_.Object, null);
+                            throw new WeatherForecastApiException<ProblemDetails>("If the weather forecast was not found.", status_, objectResponse_.Text, headers_, objectResponse_.Object, null);
                         }
                         else
                         {

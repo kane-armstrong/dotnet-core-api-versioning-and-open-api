@@ -27,6 +27,11 @@ namespace WeatherForecastApi.Controllers.V2
             _memoryCache = memoryCache;
         }
 
+        /// <summary>
+        ///     Lists weather forecasts.
+        /// </summary>
+        /// <response code="200">An array consisting of zero or more weather forecasts.</response>
+        /// <response code="401">If the request is not authorized.</response>
         [HttpGet]
         [ProducesResponseType(typeof(IEnumerable<WeatherForecast>), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(void), StatusCodes.Status401Unauthorized)]
@@ -35,11 +40,16 @@ namespace WeatherForecastApi.Controllers.V2
             return await LoadDatabase();
         }
 
+        /// <summary>
+        ///     Finds a weather forecast by its ID.
+        /// </summary>
+        /// <response code="200">The requested weather forecast, if it was found.</response>
+        /// <response code="401">If the request is not authorized.</response>
+        /// <response code="404">If the weather forecast was not found.</response>
         [HttpGet("{id}", Name = nameof(GetById))]
         [ProducesResponseType(typeof(WeatherForecast), StatusCodes.Status200OK)]
-        [ProducesResponseType(typeof(void), StatusCodes.Status400BadRequest)]
-        [ProducesResponseType(typeof(void), StatusCodes.Status401Unauthorized)]
-        [ProducesResponseType(typeof(void), StatusCodes.Status404NotFound)]
+        [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status401Unauthorized)]
+        [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status404NotFound)]
         public async Task<ActionResult<WeatherForecast>> GetById([FromRoute]Guid id)
         {
             if (id == default) return BadRequest();
