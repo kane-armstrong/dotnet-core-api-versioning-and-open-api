@@ -24,7 +24,8 @@ event in the project file. If you would prefer not to do this (e.g. because you 
 then you could use something like the toolchain downloadable via npm. The examples in this repository combine the
 `aspNetCoreToOpenApi` document generator and the `openApiToCSharpClient` code generator to produce a working C# client.
 This will only work if you are using NSwag for your OpenAPI documentation in your API project; if you are using
-Swashbuckle then you will need to replace the document generator with the Swashbuckle CLI, and point NSwag at that instead.
+Swashbuckle then you will need to replace the document generator with the Swashbuckle CLI, use the CLI to generate a
+yaml file (I think its yaml) and point NSwag at output of that instead.
 
 ### 1. Generating a client with npm
 
